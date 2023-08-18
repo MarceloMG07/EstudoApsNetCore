@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppMvcModel", "Sorce\Web
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppMvcController", "Sorce\WebAppMvcController\WebAppMvcController.csproj", "{4AA0D138-AACB-4AED-8EE9-0176E79C2CAC}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppMvcView", "Sorce\WebAppMvcView\WebAppMvcView.csproj", "{9916A31C-6A80-4F23-88FB-7B9D1F2C58F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4AA0D138-AACB-4AED-8EE9-0176E79C2CAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AA0D138-AACB-4AED-8EE9-0176E79C2CAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AA0D138-AACB-4AED-8EE9-0176E79C2CAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9916A31C-6A80-4F23-88FB-7B9D1F2C58F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9916A31C-6A80-4F23-88FB-7B9D1F2C58F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9916A31C-6A80-4F23-88FB-7B9D1F2C58F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9916A31C-6A80-4F23-88FB-7B9D1F2C58F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
