@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using WebAppMvc1.Models;
+using WebAppMvcModel.Models;
 
 namespace WebAppMvc1.Controllers
 {
@@ -22,33 +23,52 @@ namespace WebAppMvc1.Controllers
             return View();
         }
 
-        [Route("TesteInicio")]
-        [Route("TesteInicio/{id:int}/{categoria?}")]
-        //https://localhost:7207/TesteInicio/5/Monitores?fiscal=true
-        //https://localhost:7207/TesteInicio/5?fiscal=true
-        public IActionResult Teste(int id, string categoria, bool fiscal)
+        [Route("FilmeErro")]
+        public IActionResult FilmErro()
         {
-            return View("Index");
+            var filme = new Filme()
+            {
+                Titulo = "Oi",
+                DataLancamento = DateTime.Now,
+                Genero = null,
+                Avaliacao = 10,
+                Valor = 5000
+            };
+            return RedirectToAction("ResultFilm", filme);
         }
 
-        [Route("Json")]
-        public IActionResult ResultJson()
+        [Route("Filme")]
+        public IActionResult Film()
         {
-            return Json("{'name':'Marcelo Goncaçves'}");
+            var filme = new Filme()
+            {
+                Titulo = "Aprendendo a Programar",
+                DataLancamento = DateTime.Now,
+                Genero = "Realidade",
+                Avaliacao = 5,
+                Valor = 999
+            };
+            return RedirectToAction("ResultFilm", filme);
         }
 
-        [Route("Arquivo")]
-        public IActionResult RetornoFile()
-        {
-            var fileBytes = System.IO.File.ReadAllBytes(@"C:\TestFileBytes.txt");
-            var fileName = "TestFile.txt";
-            return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
-        }
-
-        [Route("Texto")]
-        public IActionResult ResultContent()
+        [Route("CadastrarFilme")]
+        public IActionResult AddFilm()
         {
             return Content("Qualquer coisa");
+        }
+
+        [Route("RetornaFilme")]
+        public IActionResult ResultFilm(Filme filme)
+        {
+            if (!ModelState.IsValid)
+            {
+                foreach (var error in ModelState.Values.SelectMany(e => e.Errors))
+                {
+                    Console.WriteLine(error.ErrorMessage);
+                }
+            }
+
+            return View("Index");
         }
 
         [Route("Privacidade")]
