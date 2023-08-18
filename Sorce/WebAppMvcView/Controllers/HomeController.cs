@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using WebAppMvc1.Models;
-using WebAppMvcModel.Models;
+using WebAppMvcView.Models;
 
-namespace WebAppMvc1.Controllers
+namespace WebAppMvcView.Controllers
 {
     [Route("")]
     [Route("MinhaRotaPorAtributo")]

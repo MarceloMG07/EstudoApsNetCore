@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace WebAppMvcModel.Models
+namespace WebAppMvcView.Models
 {
     public class Filme
     {
