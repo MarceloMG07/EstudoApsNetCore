@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppMvc1", "Sorce\WebAppMvc1\WebAppMvc1.csproj", "{7AE8F992-10E2-4CCB-950B-477E6F097042}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppMvcModel", "Sorce\WebAppMvcModel\WebAppMvcModel.csproj", "{13F38266-E55F-47BC-929E-C1758B9A22D5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppMvcController", "Sorce\WebAppMvcController\WebAppMvcController.csproj", "{4AA0D138-AACB-4AED-8EE9-0176E79C2CAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7AE8F992-10E2-4CCB-950B-477E6F097042}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7AE8F992-10E2-4CCB-950B-477E6F097042}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7AE8F992-10E2-4CCB-950B-477E6F097042}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7AE8F992-10E2-4CCB-950B-477E6F097042}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13F38266-E55F-47BC-929E-C1758B9A22D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13F38266-E55F-47BC-929E-C1758B9A22D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13F38266-E55F-47BC-929E-C1758B9A22D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13F38266-E55F-47BC-929E-C1758B9A22D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AA0D138-AACB-4AED-8EE9-0176E79C2CAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AA0D138-AACB-4AED-8EE9-0176E79C2CAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AA0D138-AACB-4AED-8EE9-0176E79C2CAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AA0D138-AACB-4AED-8EE9-0176E79C2CAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
