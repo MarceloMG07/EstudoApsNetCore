@@ -31,6 +31,26 @@ namespace WebAppMvc1.Controllers
             return View("Index");
         }
 
+        [Route("Json")]
+        public IActionResult ResultJson()
+        {
+            return Json("{'name':'Marcelo Goncaçves'}");
+        }
+
+        [Route("Arquivo")]
+        public IActionResult RetornoFile()
+        {
+            var fileBytes = System.IO.File.ReadAllBytes(@"C:\TestFileBytes.txt");
+            var fileName = "TestFile.txt";
+            return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
+        }
+
+        [Route("Texto")]
+        public IActionResult ResultContent()
+        {
+            return Content("Qualquer coisa");
+        }
+
         [Route("Privacidade")]
         public IActionResult Privacy()
         {
