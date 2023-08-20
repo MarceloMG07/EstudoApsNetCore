@@ -30,7 +30,7 @@ namespace WebAppMvcView.Models
         public decimal Valor { get; set; }
 
         [Required(ErrorMessage = "A Avaliação é obrigatória!")]
-        [RegularExpression(@"^[0-5]*$", ErrorMessage = "Somente números de 1 à 5!")]
+        [RegularExpression(@"^[0-5]*$", ErrorMessage = "Somente números de 0 à 5!")]
         [Display(Name = "Avaliação")]
         public int Avaliacao { get; set; }
     }
