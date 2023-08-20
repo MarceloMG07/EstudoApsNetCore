@@ -13,25 +13,32 @@
 
         <form asp-action="Adicionar">
 
+            <div asp-validation-summary="All" class="text-danger"></div>
+
             <div class="mb-3">
                 <label asp-for="Titulo" class="form-label"></label>
                 <input asp-for="Titulo" class="form-control" />
+                <span asp-validation-for="Titulo" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <label asp-for="DataLancamento" class="form-label"></label>
                 <input asp-for="DataLancamento" class="form-control" />
+                <span asp-validation-for="DataLancamento" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <label asp-for="Genero" class="form-label"></label>
                 <input asp-for="Genero" class="form-control" />
+                <span asp-validation-for="Genero" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <label asp-for="Valor" class="form-label"></label>
                 <input asp-for="Valor" class="form-control" />
+                <span asp-validation-for="Valor" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <label asp-for="Avaliacao" class="form-label"></label>
                 <input asp-for="Avaliacao" class="form-control" />
+                <span asp-validation-for="Avaliacao" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <input type="submit" class="btn btn-outline-primary" value="Adicionar" />
@@ -41,3 +48,9 @@
 
     </div>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
