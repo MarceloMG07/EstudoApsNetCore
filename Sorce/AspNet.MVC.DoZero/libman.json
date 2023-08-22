@@ -1,0 +1,61 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "bootstrap@5.3.1",
+      "destination": "wwwroot/lib/bootstrap/dist",
+      "files": [
+        "css/bootstrap.min.css",
+        "css/bootstrap.min.css.map",
+        "js/bootstrap.bundle.js",
+        "js/bootstrap.bundle.js.map"
+      ]
+    },
+    {
+      "library": "jquery@3.7.0",
+      "destination": "wwwroot/lib/jquery/dist",
+      "files": [
+        "jquery.min.js",
+        "jquery.min.map"
+      ]
+    },
+    {
+      "library": "jquery-validate@1.19.5",
+      "destination": "wwwroot/lib/jquery-validate/dist/",
+      "files": [
+        "jquery.validate.min.js",
+        "localization/messages_pt_BR.min.js",
+        "localization/methods_pt.min.js",
+        "additional-methods.min.js"
+      ]
+    },
+    {
+      "library": "jquery-validation-unobtrusive@4.0.0",
+      "destination": "wwwroot/lib/jquery-validation-unobtrusive/dist/",
+      "files": [
+        "jquery.validate.unobtrusive.min.js"
+      ]
+    },
+    {
+      "provider": "cdnjs",
+      "library": "font-awesome@6.4.2",
+      "destination": "wwwroot/lib/font-awesome/dist/",
+      "files": [
+        "css/all.min.css",
+        "webfonts/fa-brands-400.ttf",
+        "webfonts/fa-brands-400.woff2",
+        "webfonts/fa-regular-400.ttf",
+        "webfonts/fa-regular-400.woff2",
+        "webfonts/fa-solid-900.ttf",
+        "webfonts/fa-solid-900.woff2",
+        "webfonts/fa-v4compatibility.ttf",
+        "webfonts/fa-v4compatibility.woff2",
+        "sprites/brands.svg",
+        "sprites/regular.svg",
+        "sprites/solid.svg",
+        "js/all.min.js"
+      ]
+    }
+  ]
+}
