@@ -6,4 +6,15 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Produtos\Data\" />
+    <Folder Include="Areas\Produtos\Models\" />
+    <Folder Include="Areas\Vendas\Data\" />
+    <Folder Include="Areas\Vendas\Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.9" />
+  </ItemGroup>
+
 </Project>

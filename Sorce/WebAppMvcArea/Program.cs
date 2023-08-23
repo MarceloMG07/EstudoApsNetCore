@@ -30,6 +30,11 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+//app.MapControllerRoute("areas","{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+app.MapAreaControllerRoute("AreaProdutos", "Produtos", "Produtos/{controller=Cadastro}/{action=Index}/{id?}");
+app.MapAreaControllerRoute("AreaVendas", "Vendas", "Vendas/{controller=Cadastro}/{action=Index}/{id?}");
+
 // Note a ligeira mudança na declaração da rota padrão
 // No caso de precisar mapear mais de uma rota duplique o código abaixo
 app.MapControllerRoute("default","{controller=Home}/{action=Index}/{id?}");
