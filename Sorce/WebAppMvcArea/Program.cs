@@ -1,6 +1,17 @@
 // O builder é responsável por fornecer os métodos de controle
 // dos serviços e demais funcionalidades na configuração da App
+using Microsoft.AspNetCore.Mvc.Razor;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Adicionando suporte a mudança de convenção da rota das areas.
+//builder.Services.Configure<RazorViewEngineOptions>(options =>
+//{
+//    options.AreaViewLocationFormats.Clear();
+//    options.AreaViewLocationFormats.Add("/Modulos/{2}/Views/{1}/{0}.cshtml");
+//    options.AreaViewLocationFormats.Add("/Modulos/{2}/Views/Shared/{0}.cshtml");
+//    options.AreaViewLocationFormats.Add("/Views/Shared/{0}.cshtml");
+//});
 
 // Daqui para baixo é conteúdo que vinha dentro do método  ConfigureServices() na antiga Startup.cs
 // Nesta area adicionamos serviços ao pipeline
