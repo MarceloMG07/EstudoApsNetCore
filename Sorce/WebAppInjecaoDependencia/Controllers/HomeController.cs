@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using WebAppInjecaoDependencia.Data;
 using WebAppInjecaoDependencia.Models;
 
 namespace WebAppInjecaoDependencia.Controllers
@@ -7,15 +8,19 @@ namespace WebAppInjecaoDependencia.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IPedidoRepository _pedidoRepository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IPedidoRepository pedidoRepository)
         {
             _logger = logger;
+            _pedidoRepository = pedidoRepository;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var pedido = _pedidoRepository.ObterPedido();
+
+            return View(pedido);
         }
 
         public IActionResult Privacy()
