@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using WebAppEntityFramework.Models;
 
 namespace WebAppEntityFramework.Data
 {
@@ -8,5 +9,7 @@ namespace WebAppEntityFramework.Data
         {
             
         }
+
+        public DbSet<Aluno> Alunos { get; set; }
     }
 }
