@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppInjecaoDependencia", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppEntityFramework", "Sorce\WebAppEntityFramework\WebAppEntityFramework.csproj", "{113AF2F1-CED9-4F30-AAD9-333CCF88C0CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppMvcIdentity", "Sorce\WebAppMvcIdentity\WebAppMvcIdentity.csproj", "{096F7261-DF56-42EE-8E39-7DBD5314407D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{113AF2F1-CED9-4F30-AAD9-333CCF88C0CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{113AF2F1-CED9-4F30-AAD9-333CCF88C0CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{113AF2F1-CED9-4F30-AAD9-333CCF88C0CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{096F7261-DF56-42EE-8E39-7DBD5314407D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{096F7261-DF56-42EE-8E39-7DBD5314407D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{096F7261-DF56-42EE-8E39-7DBD5314407D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{096F7261-DF56-42EE-8E39-7DBD5314407D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
