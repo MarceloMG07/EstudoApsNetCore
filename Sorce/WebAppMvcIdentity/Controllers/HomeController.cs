@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using WebAppMvcIdentity.Helpers;
 using WebAppMvcIdentity.Models;
 
 namespace WebAppMvcIdentity.Controllers
@@ -34,6 +35,12 @@ namespace WebAppMvcIdentity.Controllers
 
         [Authorize(Policy = "PodeExcluir")]
         public IActionResult SecretoClaim()
+        {
+            return View("Privacy");
+        }
+
+        [ClaimsAuthorize("Produto","Ler")]
+        public IActionResult ClaimCustom()
         {
             return View("Privacy");
         }
