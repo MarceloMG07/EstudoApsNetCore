@@ -5,6 +5,7 @@ using WebAppMvcIdentity.Models;
 
 namespace WebAppMvcIdentity.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -14,15 +15,21 @@ namespace WebAppMvcIdentity.Controllers
             _logger = logger;
         }
 
+        [AllowAnonymous]
         public IActionResult Index()
         {
             return View();
         }
 
-        [Authorize]
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        [Authorize(Roles = "Admin")]
+        public IActionResult Secreto()
+        {
+            return View("Privacy");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

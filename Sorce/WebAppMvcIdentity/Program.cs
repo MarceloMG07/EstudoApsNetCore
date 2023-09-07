@@ -26,6 +26,7 @@ builder.Services.AddDbContext<WebAppMvcIdentityContext>(options => options.UseMy
 
 // Adicionando configuração padrão do Identity
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddRoles<IdentityRole>()
     .AddDefaultUI()
     .AddEntityFrameworkStores<WebAppMvcIdentityContext>();
 
