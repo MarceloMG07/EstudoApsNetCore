@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using WebAppMvcIdentity.Areas.Identity.Data;
+using WebAppMvcIdentity.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,12 +36,13 @@ builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("PodeExcluir", policy => policy.RequireClaim("PodeExcluir"));
 
-    //options.AddPolicy("PodeLer", policy => policy.Requirements.Add(new PermissaoNecessaria("PodeLer")));
+    options.AddPolicy("PodeLer", policy => policy.Requirements.Add(new PermissaoNecessariaHelper("PodeLer")));
+    options.AddPolicy("PodeEscrever", policy => policy.Requirements.Add(new PermissaoNecessariaHelper("PodeEscrever")));
     //options.AddPolicy("PodeEscrever", policy => policy.Requirements.Add(new PermissaoNecessaria("PodeEscrever")));
 });
 
 // Resolvendo DI para o Handler de Authorization
-//builder.Services.AddSingleton<IAuthorizationHandler, PermissaoNecessariaHandler>();
+builder.Services.AddSingleton<IAuthorizationHandler, PermissaoNecessariaHelperHandler>();
 
 // Adicionando MVC no pipeline
 builder.Services.AddControllersWithViews();
