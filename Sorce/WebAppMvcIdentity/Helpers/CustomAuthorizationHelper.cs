@@ -31,6 +31,19 @@ namespace WebAppMvcIdentity.Helpers
 
         public void OnAuthorization(AuthorizationFilterContext context)
         {
+            if (!context.HttpContext.User.Identity!.IsAuthenticated)
+            {
+                context.Result = new RedirectToRouteResult(new
+                    RouteValueDictionary(new
+                    RouteValueDictionary(new
+                    {
+                        area = "Identity",
+                        page = "/Account/Login",
+                        ReturnUrl = context.HttpContext.Request.Path.ToString()
+                    })));
+                return;
+            }
+
             if (!CustomAuthorizationHelper.ValidarClaimsUsuario(context.HttpContext, _claim.Type, _claim.Value))
             {
                 context.Result = new ForbidResult();
