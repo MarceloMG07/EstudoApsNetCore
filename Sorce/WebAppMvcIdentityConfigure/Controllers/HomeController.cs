@@ -19,6 +19,7 @@ namespace WebAppMvcIdentityConfigure.Controllers
         [AllowAnonymous]
         public IActionResult Index()
         {
+            throw new Exception("Teste Erro!");
             return View();
         }
 
@@ -45,10 +46,33 @@ namespace WebAppMvcIdentityConfigure.Controllers
             return View("Privacy");
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        [Route("erro/{id:length(3,3)}")]
+        public IActionResult Error(int id)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            var modelError = new ErrorViewModel();
+
+            switch (id)
+            {
+                case 500:
+                    modelError.Message = "Ocorreu um erro! Tente novamente mais tarde ou contate nosso suporte.";
+                    modelError.Title = "Ocirreu um erro!";
+                    modelError.ErrorCode = id;
+                    break;
+                case 403:
+                    modelError.Message = "Você não tem permissão para fazer isso.";
+                    modelError.Title = "Acesso Negado!";
+                    modelError.ErrorCode = id;
+                    break;
+                default:
+                    modelError.Message = "A página que você esta procurando não existe! <br />Em caso de dúvidas entre em contato com nosso suporte.";
+                    modelError.Title = "Ocirreu um erro!";
+                    modelError.ErrorCode = id;
+                    break;
+            }
+
+            return View("Error", modelError);
+            //return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
