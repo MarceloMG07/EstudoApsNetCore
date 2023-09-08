@@ -1,8 +1,5 @@
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using WebAppMvcIdentityConfigure.Areas.Identity.Data;
-using WebAppMvcIdentityConfigure.Helpers;
+
+using WebAppMvcIdentityConfigure.Configs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,35 +11,13 @@ builder.Configuration
 
 // *** Configurando serviços no container ***
 
-// Politica de cookies (LGPD)
-builder.Services.Configure<CookiePolicyOptions>(options =>
-{
-    options.CheckConsentNeeded = context => true;
-    options.MinimumSameSitePolicy = SameSiteMode.None;
-});
-
-// Adicionando suporte ao contexto do Identity via EF
-var connectionString = builder.Configuration.GetConnectionString("WebAppMvcIdentityContextConnection") ?? throw new InvalidOperationException("Connection string 'WebAppMvcIdentityContextConnection' not found.");
-builder.Services.AddDbContext<WebAppMvcIdentityContext>(options => options.UseMySQL(connectionString));
-
-// Adicionando configuração padrão do Identity
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddRoles<IdentityRole>()
-    .AddDefaultUI()
-    .AddEntityFrameworkStores<WebAppMvcIdentityContext>();
+builder.Services.AddIdentityConfig(builder.Configuration);
 
 // Adicionando Autorizações personalizadas por policies
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy("PodeExcluir", policy => policy.RequireClaim("PodeExcluir"));
-
-    options.AddPolicy("PodeLer", policy => policy.Requirements.Add(new PermissaoNecessariaHelper("PodeLer")));
-    options.AddPolicy("PodeEscrever", policy => policy.Requirements.Add(new PermissaoNecessariaHelper("PodeEscrever")));
-    //options.AddPolicy("PodeEscrever", policy => policy.Requirements.Add(new PermissaoNecessaria("PodeEscrever")));
-});
+builder.Services.AddAuthorizationConfig();
 
 // Resolvendo DI para o Handler de Authorization
-builder.Services.AddSingleton<IAuthorizationHandler, PermissaoNecessariaHelperHandler>();
+builder.Services.ResolveDependencies();
 
 // Adicionando MVC no pipeline
 builder.Services.AddControllersWithViews();
