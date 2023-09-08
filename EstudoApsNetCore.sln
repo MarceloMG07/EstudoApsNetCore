@@ -17,11 +17,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppMvcTagHelper", "Sorce
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppMvcArea", "Sorce\WebAppMvcArea\WebAppMvcArea.csproj", "{9F1D028F-0B36-46A0-B99D-6DADA6C3E246}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppInjecaoDependencia", "Sorce\WebAppInjecaoDependencia\WebAppInjecaoDependencia.csproj", "{FF0D28D3-4DE9-475C-949B-B287BDC4CCBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppInjecaoDependencia", "Sorce\WebAppInjecaoDependencia\WebAppInjecaoDependencia.csproj", "{FF0D28D3-4DE9-475C-949B-B287BDC4CCBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppEntityFramework", "Sorce\WebAppEntityFramework\WebAppEntityFramework.csproj", "{113AF2F1-CED9-4F30-AAD9-333CCF88C0CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppEntityFramework", "Sorce\WebAppEntityFramework\WebAppEntityFramework.csproj", "{113AF2F1-CED9-4F30-AAD9-333CCF88C0CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppMvcIdentity", "Sorce\WebAppMvcIdentity\WebAppMvcIdentity.csproj", "{096F7261-DF56-42EE-8E39-7DBD5314407D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppMvcIdentity", "Sorce\WebAppMvcIdentity\WebAppMvcIdentity.csproj", "{096F7261-DF56-42EE-8E39-7DBD5314407D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppMvcIdentityConfigure", "Sorce\WebAppMvcIdentityConfigure\WebAppMvcIdentityConfigure.csproj", "{E97A3FC4-0874-4554-9858-6A0A96E9A672}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{096F7261-DF56-42EE-8E39-7DBD5314407D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{096F7261-DF56-42EE-8E39-7DBD5314407D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{096F7261-DF56-42EE-8E39-7DBD5314407D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E97A3FC4-0874-4554-9858-6A0A96E9A672}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E97A3FC4-0874-4554-9858-6A0A96E9A672}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E97A3FC4-0874-4554-9858-6A0A96E9A672}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E97A3FC4-0874-4554-9858-6A0A96E9A672}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
