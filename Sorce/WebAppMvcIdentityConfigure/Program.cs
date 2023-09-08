@@ -9,6 +9,11 @@ builder.Configuration
     .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", true, true)
     .AddEnvironmentVariables();
 
+if (builder.Environment.IsProduction())
+{
+    builder.Configuration.AddUserSecrets<Program>();
+}
+
 // *** Configurando serviços no container ***
 
 builder.Services.AddIdentityConfig(builder.Configuration);
