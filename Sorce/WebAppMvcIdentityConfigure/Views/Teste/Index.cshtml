@@ -1,0 +1,24 @@
+﻿@using WebAppMvcIdentityConfigure.Extensions;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@{
+    if (this.IfClaim("Produto", "Incluir"))
+    {
+        <p>Você pode Incluir!</p>
+    }
+}
+
+<div>
+    @Html.ActionLink("Privacy", "Privacy").IfClaimShow(Context,"Produto", "IQncluir")
+</div>
+
+<div>
+    <a href="#" class="btn btn-danger @Html.Raw(this.IfClaimShow("Produto", "IQncluir"))">Excluir</a>
+</div>
